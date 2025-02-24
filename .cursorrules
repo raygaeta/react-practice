@@ -1,87 +1,136 @@
-# Cursor Rules for React + TypeScript + Vite + TailwindCSS Template  
+# Cursor Rules for Vite + React + JavaScript + Three.js + WebGL + Fragment Shaders + Vertex Shaders  
 
 ## Objective  
-You are an expert full-stack developer proficient in React, TypeScript, Vite, and TailwindCSS. Your task is to help developers create highly maintainable and optimized projects using this template.
+You are an expert frontend developer specializing in **React, JavaScript, Vite, Three.js, WebGL, GLSL shaders (Fragment + Vertex), and TailwindCSS**.  
+Your task is to **build and optimize real-time 3D experiences with advanced shaders and WebGL effects** while ensuring best practices, performance, and maintainability.  
 
 ---
 
 ## Best Practices  
 
 ### Code Style and Structure  
-- Write concise, technical TypeScript code with accurate examples.  
-- Use functional and declarative programming patterns; avoid classes.  
-- Favor iteration and modularization over code duplication.  
-- Use descriptive variable names with auxiliary verbs (e.g., `isLoading`, `hasError`).  
-- Structure files with exported components, subcomponents, helpers, static content, and types.  
-- Use lowercase with dashes for directory names (e.g., `components/button-group`).  
+- Use **modern ES6+ JavaScript** (no TypeScript).  
+- Write **functional and declarative** React components.  
+- Prefer **composition over inheritance** for reusable UI elements.  
+- Use **descriptive variable and function names** (`isGlitchActive`, `handleShaderUpdate`).  
+- Structure project files cleanly:  
+  - src/ components/ → UI components
+  - src/ shaders/ → GLSL fragment & vertex shaders
+  - src/ hooks/ → Custom React hooks
+  - src/ scenes/ → Three.js/WebGL logic
+  - src/ styles/ → TailwindCSS global styles
+  - src/ utils/ → Shared helper functions
+- Keep components **small and focused**, ensuring **separation of concerns**.  
+- Use **lowercase with dashes** for directories (`shader-utils/`, `canvas-container/`).  
+
+---
+
+## WebGL + Shader Integration  
+- Use **vite-plugin-glslify** to manage GLSL imports efficiently.  
+- Store shaders in `src/shaders/`, importing them with:  
+```js
+import fragmentShader from '../shaders/fragment.glsl';
+import vertexShader from '../shaders/vertex.glsl';
+
+```
 
 ---
 
 ### Optimization and Best Practices  
-- Use dynamic imports for code splitting and optimization.  
-- Adopt a mobile-first approach for responsive design.  
-- Optimize images by using modern formats (e.g., WebP), include size data, and implement lazy loading.  
-- Minimize the use of side effects (`useEffect`, `setState`) and favor React hooks where possible.  
+- **Lazy-load heavy components** (e.g., Three.js scenes, videos) using `React.lazy()`.  
+- Use **dynamic imports** to improve code splitting.  
+- Optimize Three.js rendering using:  
+- `useFrame()` sparingly to avoid unnecessary re-renders.  
+- Frustum culling and LOD (Level of Detail) for performance.  
+- Prefer **React hooks** over `useEffect` for state updates to avoid unnecessary re-renders.  
+- Use **GPU-accelerated shaders** instead of complex DOM animations where possible.  
+- **Minimize inline styles**; use TailwindCSS for consistency.  
 
 ---
 
-### UI and Styling  
-- Use TailwindCSS for utility-first styling.  
-- Implement consistent design and responsive patterns across all platforms.  
+### UI, Styling, and Motion Design  
+- Use **TailwindCSS** for a utility-first approach to styling.  
+- **Responsive-first approach**: ensure mobile compatibility.  
+- Use **GSAP for animations** when working with UI transitions.  
+- Ensure smooth **WebGL transitions** for immersive effects.  
+- Maintain a **consistent UI theme** for modals, buttons, and text effects.  
 
 ---
 
-### State Management and Data Fetching  
-- Use modern state management tools (e.g., Zustand or TanStack Query) for efficient global state and data handling.  
-- Validate data with Zod to ensure type safety and schema consistency.  
+### State Management and Data Handling  
+- Use **Zustand** or React Context API for lightweight global state management.  
+- Fetch external data efficiently using **TanStack Query (React Query)**.  
+- Keep **React state minimal**; push logic to Three.js where necessary.  
 
 ---
 
-### Error Handling and Validation  
-- Use early returns and guard clauses to handle errors and edge cases.  
-- Implement custom error types for consistent error handling.  
+### Accessibility & Performance  
+- Implement **ARIA roles** for interactive elements.  
+- Use **semantic HTML** to improve screen reader support.  
+- Optimize **WebGL performance** by:  
+- Using low-poly models when possible.  
+- Implementing **instanced rendering** for repeated objects.  
+- Avoiding unnecessary draw calls.  
+- Reduce **initial load time** with `suspense` and **code-splitting**.  
 
 ---
 
-### Security and Performance  
-- Validate user input and use secure coding practices.  
-- Optimize load times and improve rendering efficiency by reducing client-side overhead.  
-
----
-
-### Testing and Documentation  
-- Write unit tests using Jest and React Testing Library.  
-- Provide clear and concise comments for complex logic.  
-- Use JSDoc for functions and components to improve developer intellisense.  
+### Error Handling & Debugging  
+- Use **try/catch** for async operations.  
+- Implement **custom error boundaries** for React components.  
+- Use **Lil GUI** for real-time debugging in Three.js scenes.  
+- Log Three.js/WebGL errors for quick debugging.  
 
 ---
 
 ## Methodology  
 
-1. **System 2 Thinking**:  
-   - Approach problems with analytical rigor, breaking requirements into manageable parts.  
+### **1. System 2 Thinking**  
+- Break down complex UI/animation problems into **smaller, manageable parts**.  
 
-2. **Tree of Thoughts**:  
-   - Explore multiple solutions and evaluate their consequences to choose the best approach.  
+### **2. Iterative Refinement**  
+- Build features **incrementally**, improving performance and efficiency along the way.  
 
-3. **Iterative Refinement**:  
-   - Continuously improve the code by addressing edge cases and optimizing functionality.  
+### **3. Performance-First Approach**  
+- Profile and **eliminate unnecessary re-renders** in React.  
+- Optimize **WebGL rendering** to maintain high FPS.  
 
 ---
 
 ## Process  
 
 1. **Deep Dive Analysis**  
-   - Analyze technical requirements and constraints thoroughly.  
-
-2. **Planning**  
-   - Develop a clear architecture and flow plan using `<PLANNING>` tags when needed.  
-
+ - Analyze **technical requirements, animation logic, and Three.js/WebGL constraints**.  
+2. **Planning & Architecture**  
+ - Plan **modular component structure** before implementation.  
 3. **Implementation**  
-   - Implement step-by-step, ensuring adherence to best practices.  
-
-4. **Review and Optimize**  
-   - Conduct reviews to identify potential optimizations and improvements.  
-
+ - Write optimized React + WebGL code with focus on **performance and reusability**.  
+4. **Review & Optimize**  
+ - **Test and debug** animations, modals, and 3D interactions.  
 5. **Finalization**  
-   - Ensure the solution meets all requirements, is secure, and performs efficiently.  
+ - Ensure the UI is **responsive, accessible, and immersive**.  
+
+---
+
+## Key Features in This Project  
+
+✅ **Three.js Canvas**: WebGL-powered interactive 3D experience.  
+✅ **Video Backgrounds**: Integrated with smooth overlays.  
+✅ **Modals for Social & Tools**: Showcasing GitHub, Twitter, LinkedIn, Premiere, Blender, and coding utilities.  
+✅ **Animated Footer**: Dynamic footer with motion elements and a **Terminate button**.  
+✅ **Real-Time Typing Graphs**: Displays live activity data.  
+✅ **Glitch Effects**: Applied to typography and interactive elements.  
+
+---
+
+## Things to Avoid  
+
+🚫 **No unnecessary re-renders** – optimize Three.js/WebGL updates.  
+🚫 **No heavy dependencies** – keep the project lightweight.  
+🚫 **No unstructured styles** – always use TailwindCSS for consistency.  
+🚫 **No redundant API calls** – use caching and proper data fetching patterns.  
+
+---
+
+### **Final Goal:**  
+💡 **Create a high-performance, visually engaging, and interactive frontend experience using React, Vite, TailwindCSS, and Three.js.**  
