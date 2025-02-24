@@ -1,13 +1,10 @@
-# React TypeScript Vite + TailwindCSS Template 🚀
+# React JavaScript Vite + TailwindCSS Template 🚀
 
 #### This template provides a modern and efficient starting point for building React applications using TypeScript, Vite, and TailwindCSS. Perfect for developers who want a streamlined workflow and optimized performance, this template is designed to accelerate your project development with the latest tools and best practices.
 
 ---
 
 ## 🌟 Key Features
-
-### ⚛️ React + TypeScript Integration
-#### Leverage the power of TypeScript for type safety and a better development experience with React.
 
 ### ⚡ Lightning-Fast Vite Bundler
 #### Experience super-fast development and build times with Vite, the next-generation front-end tooling.
