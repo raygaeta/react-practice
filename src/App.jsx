@@ -1,4 +1,7 @@
+import {useState} from 'react';
+
 import Form from './components/Form.jsx';
+import Synced from './components/Synced.jsx';
 
 let statuses = [
   'empty',
@@ -8,8 +11,14 @@ let statuses = [
   'error',
 ];
 
-export default function App() {
-   
+export default function App({}) {
+   const [text, setText] = useState('');
+
+   const handleText = (e) =>
+   {
+      setText(e.target.value);
+   }
+
   return (
     <div className="flex flex-col items-center justify-center gap-4 overflow-y-auto h-screen">
         {/* Form */}
@@ -20,7 +29,9 @@ export default function App() {
         </section>
       ))} */}
 
-      
+    
+      <Synced label="one" text={text} onChange={handleText}/>
+      <Synced label="two" text={text} onChange={handleText}/>
     </div>
   );
 }
