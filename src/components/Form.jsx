@@ -3,6 +3,8 @@ export default function Form({ status }) {
       return <h1>That's right!</h1>
     }
     return (
+      <>
+      <h1><b>Form</b></h1>
       <form>
         <textarea disabled={
           status === 'submitting'
@@ -20,5 +22,6 @@ export default function Form({ status }) {
           </p>
         }
       </form>
+      </>
     );
   }  

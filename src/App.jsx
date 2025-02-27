@@ -2,6 +2,7 @@ import {useState} from 'react';
 
 import Form from './components/Form.jsx';
 import Synced from './components/Synced.jsx';
+import Reducer from './components/Reducer.jsx';
 
 let statuses = [
   'empty',
@@ -32,6 +33,7 @@ export default function App({}) {
     
       <Synced label="one" text={text} onChange={handleText}/>
       <Synced label="two" text={text} onChange={handleText}/>
+      <Reducer />
     </div>
   );
 }
