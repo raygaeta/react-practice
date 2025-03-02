@@ -1,17 +1,18 @@
-import { useRef } from "react";
+import {useRef} from 'react'
 
 export default function Ref()
 {
-    const buttonRef = useRef(null);
+    const inputRef = useRef(null)
 
     const handleClick = () =>
     {
-        buttonRef.current.style.backgroundColor = 'red';
+        inputRef.current.focus()
     }
-
+    
     return (
-        <button onClick={handleClick} ref={buttonRef} style={{outline: '5px solid black', backgroundColor: 'teal', padding: '10px', borderRadius: '5px'}}>
-            Click me
-        </button>
+        <>
+            <input onClick={handleClick}ref={inputRef}style={{outline: '5px solid black'}}></input>
+            <label>Label</label>
+        </>
     )
 }
